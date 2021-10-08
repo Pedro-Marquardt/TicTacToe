@@ -2,11 +2,6 @@ import React, { useState, useEffect } from 'react';
 import './TicTacToe.css';
 
 function TicTacToe() {
-
-    const registerPlayer = () => {
-
-    }
-
     const emptyBoard = Array(9).fill("");
     
     const [board, setBoard] = useState(emptyBoard);
@@ -83,7 +78,11 @@ function TicTacToe() {
           </h2>
         :
         <h2 className="winner-message">
-          <span className={winner}>{winner}</span> venceu!
+          {winner === null ? 
+          <span>comece o jogo</span>
+            :
+          <span className={winner}>{winner} venceu!</span> 
+        }
         </h2>
         }
         <button onClick={resetGame}>Recomeçar o Jogo!</button>
